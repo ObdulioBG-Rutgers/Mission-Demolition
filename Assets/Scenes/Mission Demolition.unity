@@ -163,6 +163,37 @@ Halo:
     serializedVersion: 2
     rgba: 4290756543
   m_Size: 3
+--- !u!1 &388130829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388130830}
+  m_Layer: 0
+  m_Name: CloudAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &388130830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388130829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &434167277
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +505,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: _MainCamera
   m_TagString: MainCamera
@@ -570,6 +602,25 @@ MonoBehaviour:
   easing: 0.05
   min_xy: {x: 0, y: 0}
   cam_z: 0
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1077702d19f9bc4ea04740bd19de3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CloudCrafter
+  num_clouds: 40
+  cloud_prefab: {fileID: 3194970368884472698, guid: 531f6e2998b0f224da443379e562aa5e, type: 3}
+  cloud_pos_min: {x: -50, y: -5, z: 10}
+  cloud_pos_max: {x: 150, y: 100, z: 10}
+  cloud_scale_min: 1
+  cloud_scale_max: 3
+  cloud_speed_mult: 0.5
 --- !u!1 &1018842406
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,58 +877,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270338415}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1903799927
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1903799929}
-  - component: {fileID: 1903799928}
-  m_Layer: 0
-  m_Name: Cloud
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1903799928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903799927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481c9b61d5396354aad2eba9c9e48cf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Cloud
-  cloud_sphere: {fileID: 2424116446176207515, guid: 00162bbb67a9e8842bd795df1bddad66, type: 3}
-  num_sphere_min: 6
-  num_sphere_max: 10
-  sphere_offset_scale: {x: 5, y: 2, z: 1}
-  sphere_scale_range_x: {x: 4, y: 8}
-  sphere_scale_range_y: {x: 3, y: 4}
-  sphere_scale_range_z: {x: 2, y: 4}
-  scale_y_min: 2
---- !u!4 &1903799929
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903799927}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -886,4 +885,4 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 434167281}
   - {fileID: 1018842408}
-  - {fileID: 1903799929}
+  - {fileID: 388130830}
